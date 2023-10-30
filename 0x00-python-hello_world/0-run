@@ -1,1 +1,2 @@
-0x00-python-hello_world
+#!/bin/bash
+python3 $PYFILE

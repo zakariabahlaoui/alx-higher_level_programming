@@ -2,14 +2,21 @@
 """A script that
 fetches https://intranet.hbtn.io/status.
 """
+import urllib.request
 
+# URL to fetch
+url = 'https://alx-intranet.hbtn.io/status'
 
-if __name__ == '__main__':
-    import urllib.request
+# Fetching the URL
+with urllib.request.urlopen(url) as response:
+    # Reading the response body
+    content = response.read()
 
-    with urllib.request.urlopen('https://intranet.hbtn.io/status') as resp:
-        content = resp.read()
-        print("Body response:")
-        print("\t- type: {}".format(type(content)))
-        print("\t- content: {}".format(content))
-        print("\t- utf8 content: {}".format(content.decode('utf-8')))
+    # Decoding the content to utf-8
+    utf8_content = content.decode('utf-8')
+
+    # Displaying the response body
+    print("Body response:")
+    print("\t- type:", type(content))
+    print("\t- content:", content)
+    print("\t- utf8 content:", utf8_content)

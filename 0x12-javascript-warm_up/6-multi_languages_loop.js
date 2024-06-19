@@ -1,6 +1,10 @@
 #!/usr/bin/node
-let myArray = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
+const num = parseInt(process.argv[2]);
 
-for (let i = 0, len = myArray.length; i < len; i++) {
-  console.log(myArray[i]);
+if (isNaN(num)) {
+  console.log("Missing number of occurrences");
+} else {
+  for (let i = 0; i < num; i++) {
+    console.log("C is fun");
+  }
 }
